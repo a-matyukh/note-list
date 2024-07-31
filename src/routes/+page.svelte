@@ -21,7 +21,15 @@ Actions:
     <button onclick={() => app.changeMode("create")}>ctrl + n</button>
     <button onclick={() => app.createNote()}>enter</button>
 </p>
-<p></p>
+<p>
+    <button onclick={() => app.select("ArrowUp")}>ArrowUp</button>
+    <button onclick={() => app.changeMode("edit")}>edit</button>
+    <button onclick={() => app.changeMode("select")}>select</button>
+    <button onclick={() => app.select("ArrowDown")}>ArrowDown</button>
+</p>
+<p>
+    <button onclick={() => app.removeNote()}>Ctrl + D</button>
+</p>
 
 <script>
 import app from "$lib/store/index"

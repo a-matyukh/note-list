@@ -24,18 +24,10 @@ export function createNote(text: string) {
     localforage.setItem(newNote.id, newNote)
     return newNote
 }
-export function editNote(userid: UserID, newNote: Note) {
-	// let notes = db[userid]
-    // notes = notes.map(note => {
-    //     if (note.id === newNote.id) note = newNote
-    //     return note
-    // })
-    // db[userid] = notes
-    // console.log(db)
+export function saveNote(note: Note) {
+    console.log(note)
+    localforage.setItem(note.id, note)
 }
-export function removeNote(userid: UserID, removedNote: Note) {
-	// let notes = db[userid]
-    // notes = notes.filter(note => note.id != removedNote.id)
-    // db[userid] = notes
-    // console.log(db)
+export function removeNote(id: string) {
+    localforage.removeItem(id)
 }
