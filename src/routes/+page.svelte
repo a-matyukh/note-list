@@ -1,4 +1,4 @@
-<form method="POST">
+<form method="POST" action="?/create">
     <label>
         add a note:
         <input
@@ -7,14 +7,15 @@
         />
     </label>
 </form>
-<ul class="todos">
+<ol class="todos">
     {#each data.notes as note (note.id)}
         <li>
-            {note.text}
+            <Note {note} />
         </li>
     {/each}
-</ul>
+</ol>
 
 <script>
-export let data;
+export let data
+import Note from "$lib/ui/Note.svelte"
 </script>

@@ -12,8 +12,12 @@ export function load({ cookies }) {
 }
 
 export const actions = {
-	default: async ({ cookies, request }) => {
+	create: async ({ cookies, request }) => {
 		const data = await request.formData()
 		db.createNote(cookies.get('userid'), data.get('text') as string)
+	},
+	edit: async ({ cookies, request }) => {
+		const note: Note = await request.json()
+		db.editNote(cookies.get('userid'), note)
 	}
-};
+}
