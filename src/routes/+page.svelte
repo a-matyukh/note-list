@@ -8,7 +8,7 @@
     />
 </p>
 <ol class="todos">
-    {#each app.notes as note (note.id)}
+    {#each app.list as note (note.id)}
         <li>
             <Note {note} />
         </li>

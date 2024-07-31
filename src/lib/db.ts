@@ -8,15 +8,15 @@ function Note(text: string): Note {
 }
 
 export async function getNotes() {
-    let notes = []
+    let list = []
     try {
-        await localforage.iterate((note: Note) => {
-            notes.push(note)
+        await localforage.iterate((item: Note) => {
+            list.push(item)
         })
     } catch (error) {
         console.log(error)
     }
-    return notes
+    return list
 }
 
 export function createNote(text: string) {
@@ -25,7 +25,6 @@ export function createNote(text: string) {
     return newNote
 }
 export function saveNote(note: Note) {
-    console.log(note)
     localforage.setItem(note.id, note)
 }
 export function removeNote(id: string) {
