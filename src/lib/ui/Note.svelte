@@ -18,4 +18,3 @@ $effect(() => {
         />
     </label>
 </form>
-<!-- <button onclick={() => onSubmit("remove", note)}>remove</button> -->

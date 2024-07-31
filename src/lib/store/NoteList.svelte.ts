@@ -20,7 +20,6 @@ export class NoteList {
     notes: Note[] = $state([])
     async load() {
         this.notes = await db.getNotes()
-        console.log(this.selected_item)
     }
 
     input = null
