@@ -13,6 +13,6 @@ function onSubmit(action, payload) {
 <form onsubmit={() => onSubmit("edit", note)}>
     <label>
         <input bind:value={note.text} />
-        <button type="submit">ok</button>
     </label>
 </form>
+<button onclick={() => onSubmit("remove", note)}>remove</button>

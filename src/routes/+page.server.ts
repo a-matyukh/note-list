@@ -19,5 +19,9 @@ export const actions = {
 	edit: async ({ cookies, request }) => {
 		const note: Note = await request.json()
 		db.editNote(cookies.get('userid'), note)
+	},
+	remove: async ({ cookies, request }) => {
+		const note: Note = await request.json()
+		db.removeNote(cookies.get('userid'), note)
 	}
 }

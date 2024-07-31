@@ -27,4 +27,11 @@ export function editNote(userid: UserID, newNote: Note) {
         return note
     })
     db[userid] = notes
+    console.log(db)
+}
+export function removeNote(userid: UserID, removedNote: Note) {
+	let notes = db[userid]
+    notes = notes.filter(note => note.id != removedNote.id)
+    db[userid] = notes
+    console.log(db)
 }
