@@ -1,21 +1,30 @@
-<form method="POST" action="?/create">
-    <label>
-        add a note:
-        <input
-            name="text"
-            autocomplete="off"
-        />
-    </label>
-</form>
+<p>
+    add a note:
+    <input
+        name="text"
+        autocomplete="off"
+        bind:this = {app.input}
+        bind:value = {app.new_note_text}
+    />
+</p>
 <ol class="todos">
-    {#each data.notes as note (note.id)}
+    {#each app.notes as note (note.id)}
         <li>
             <Note {note} />
         </li>
     {/each}
 </ol>
 
+<hr>
+Actions:
+<p>
+    <button onclick={() => app.changeMode("create")}>ctrl + n</button>
+    <button onclick={() => app.createNote()}>enter</button>
+</p>
+<p></p>
+
 <script>
-export let data
+import app from "$lib/store/index"
 import Note from "$lib/ui/Note.svelte"
+app.load()
 </script>
